@@ -170,11 +170,7 @@ document.addEventListener("DOMContentLoaded", initLayout);
   document.body.appendChild(btt);
   btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-  // Floating action buttons
-  const fabWrap = document.createElement("div");
-  fabWrap.className = "fab-wrap";
-  fabWrap.innerHTML = '<a href="https://wa.me/923000000000" target="_blank" class="fab whatsapp pulse" data-tooltip="WhatsApp us">W</a><a href="tel:+923000000000" class="fab call pulse" data-tooltip="Call us">☎</a>';
-  document.body.appendChild(fabWrap);
+  // (FABs removed)
 
   // Toast container
   const toastWrap = document.createElement("div");
@@ -228,7 +224,7 @@ function renderServiceCards(containerId, buttonLabel, onClick, withImage) {
       ? `<div class="service-media img-wrap"><img src="${imgSrc}" alt="${alt}" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none';this.parentElement.innerHTML='${serviceIcon(s.id).replace(/'/g, "\\'")}'"></div>`
       : `<div class="service-media">${serviceIcon(s.id)}</div>`;
     return `
-    <div class="card service-card fade-in">
+    <div class="card service-card fade-in" id="service-${s.id}">
       ${media}
       <div class="service-body">
         <h3>${s.name}</h3>
