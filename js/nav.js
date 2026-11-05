@@ -106,21 +106,22 @@
   if (hamburger) hamburger.addEventListener("click", openOverlay);
   if (closeBtn) closeBtn.addEventListener("click", closeOverlay);
 
-  // active section highlighting on home
+  // active section highlighting on home (scroll spy)
   if (isHome() && "IntersectionObserver" in window) {
-    const sections = ["about", "services", "areas", "how", "faq", "contact"];
+    const sections = ["about", "areas", "how", "faq", "contact"];
     const links = header.querySelectorAll(".site-nav-link");
+    function setActive(id) {
+      links.forEach(function (l) {
+        const href = l.getAttribute("href") || "";
+        if (href.indexOf("#" + id) !== -1) l.classList.add("active");
+        else if (href.indexOf("#") !== -1) l.classList.remove("active");
+      });
+    }
     const io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          links.forEach(function (l) {
-            const href = l.getAttribute("href") || "";
-            if (href.indexOf("#" + en.target.id) !== -1) l.classList.add("active");
-            else if (href.indexOf("#") !== -1) l.classList.remove("active");
-          });
-        }
+        if (en.isIntersecting) setActive(en.target.id);
       });
-    }, { threshold: 0.4 });
+    }, { rootMargin: "-30% 0px -55% 0px", threshold: 0 });
     sections.forEach(function (id) {
       const el = document.getElementById(id);
       if (el) io.observe(el);

@@ -83,8 +83,8 @@ function navbarHTML(base) {
 
 function footerHTML(base) {
   return `
-  <footer class="footer">
-    <div class="footer-inner">
+  <footer class="footer" id="contact">
+  <div class="footer-inner">
       <div class="footer-grid">
         <div>
           <div class="footer-brand"><img src="${base}images/logo.png" alt="HomeEase logo" class="site-logo"><span>HomeEase</span></div>
