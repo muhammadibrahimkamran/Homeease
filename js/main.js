@@ -146,18 +146,6 @@ document.addEventListener("DOMContentLoaded", initLayout);
 
 // ---------- Global polish ----------
 (function globalPolish() {
-  // Mesh background
-  const mesh = document.createElement("div");
-  mesh.className = "mesh-bg";
-  mesh.innerHTML = '<div class="mesh-blob coral"></div><div class="mesh-blob steel"></div><div class="mesh-blob vignette"></div>';
-  document.body.prepend(mesh);
-  const fluted = document.createElement("div");
-  fluted.className = "fluted";
-  document.body.prepend(fluted);
-  const grain = document.createElement("div");
-  grain.className = "grain";
-  document.body.prepend(grain);
-
   // Page fade
   document.body.classList.add("page-fade");
 
@@ -202,20 +190,7 @@ document.addEventListener("DOMContentLoaded", initLayout);
   window.addEventListener("scroll", updateProgress);
   updateProgress();
 
-  // Hero mouse glow
-  const hero = document.querySelector(".hero");
-  if (hero) {
-    const glow = document.createElement("div");
-    glow.className = "hero-glow";
-    hero.appendChild(glow);
-    hero.addEventListener("mousemove", e => {
-      const r = hero.getBoundingClientRect();
-      glow.style.left = (e.clientX - r.left) + "px";
-      glow.style.top = (e.clientY - r.top) + "px";
-      glow.style.opacity = 1;
-    });
-    hero.addEventListener("mouseleave", () => { glow.style.opacity = 0; });
-  }
+  // (no cursor glow in light theme)
 })();
 
 // Toast helper

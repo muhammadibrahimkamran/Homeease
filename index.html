@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="hero-center">
-          <div class="tech-glow"></div>
+          <div class="tech-circle"></div>
           <img src="images/technician.png" alt="HomeEase technician" class="tech-img" onerror="this.outerHTML='<div class=tech-placeholder>Add images/technician.png</div>'">
           <div class="float-badge badge-1">🛡 Verified technicians</div>
           <div class="float-badge badge-2">🕐 Same-day service</div>
@@ -221,17 +221,7 @@
       const io = new IntersectionObserver(entries => { entries.forEach(en => { if (en.isIntersecting) { if(line)line.classList.add("drawn"); circles.forEach((c,i)=>setTimeout(()=>c.classList.add("pop"),i*150)); io.unobserve(en.target); } }); }, { threshold: 0.3 });
       const wrap = document.querySelector(".steps-wrap"); if (wrap) io.observe(wrap);
     })();
-    (function() {
-      document.querySelectorAll(".tilt-card").forEach(card => {
-        card.addEventListener("mousemove", e => {
-          const r = card.getBoundingClientRect();
-          const x = (e.clientX - r.left)/r.width - 0.5;
-          const y = (e.clientY - r.top)/r.height - 0.5;
-          card.style.transform = `rotateY(${x*8}deg) rotateX(${-y*8}deg)`;
-        });
-        card.addEventListener("mouseleave", () => { card.style.transform = "rotateY(0) rotateX(0)"; });
-      });
-    })();
+    // (no 3D tilt in light theme)
     window.toggleFaq = function(btn) { btn.parentElement.classList.toggle("open"); };
   </script>
 </body>
