@@ -1,0 +1,107 @@
+<!-- pages/provider-signup.html - Service provider registration page (redesigned) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provider Sign Up - HomeEase</title>
+  <link rel="icon" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="auth-split">
+    <div class="auth-panel">
+      <img src="../images/logo.png" alt="HomeEase logo" class="site-logo">
+      <h2>Grow with HomeEase</h2>
+      <p>Register as a service provider and get more jobs on your schedule.</p>
+      <div class="photo-placeholder"></div>
+    </div>
+    <div class="auth-form-side">
+      <div class="form-card">
+        <h2 style="margin-bottom:6px;">Create Provider Account</h2>
+        <p style="color:var(--muted);margin-bottom:20px;font-size:0.9rem;">Fill in your details to get started.</p>
+        <form onsubmit="handleProviderSignup(event)">
+          <div class="float-group">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" placeholder=" ">
+            <div id="errName" class="error-msg"></div>
+          </div>
+          <div class="float-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder=" ">
+            <div id="errEmail" class="error-msg"></div>
+          </div>
+          <div class="float-group">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder=" ">
+            <div id="errPhone" class="error-msg"></div>
+          </div>
+          <div class="float-group">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <input id="password" type="password" placeholder=" ">
+              <button type="button" class="toggle-pw" data-icon="eye" data-size="18" onclick="togglePassword('password', this)"></button>
+            </div>
+            <div id="errPassword" class="error-msg"></div>
+          </div>
+          <div class="float-group">
+            <label for="confirm">Confirm Password</label>
+            <div class="input-wrap">
+              <input id="confirm" type="password" placeholder=" ">
+              <button type="button" class="toggle-pw" data-icon="eye" data-size="18" onclick="togglePassword('confirm', this)"></button>
+            </div>
+            <div id="errConfirm" class="error-msg"></div>
+          </div>
+          <div class="float-group">
+            <label for="service">Service Type</label>
+            <select id="service">
+              <option value="">Select a service</option>
+              <option>Electrician</option>
+              <option>Plumber</option>
+              <option>AC Repair</option>
+              <option>Fridge & Kitchen Appliances</option>
+              <option>Carpenter</option>
+              <option>Painter</option>
+            </select>
+            <div id="errService" class="error-msg"></div>
+          </div>
+          <div class="float-group">
+            <label for="city">City / Area</label>
+            <select id="city">
+              <option value="">Select area</option>
+              <option>Gulshan-e-Iqbal</option>
+              <option>Gulistan-e-Jauhar</option>
+              <option>North Nazimabad</option>
+              <option>DHA</option>
+              <option>Clifton</option>
+              <option>PECHS</option>
+              <option>Saddar</option>
+              <option>Malir</option>
+              <option>Korangi</option>
+              <option>Bahadurabad</option>
+              <option>Nazimabad</option>
+              <option>Federal B Area</option>
+            </select>
+            <div id="errCity" class="error-msg"></div>
+          </div>
+          <div class="float-group">
+            <label for="experience">Years of Experience</label>
+            <input id="experience" type="number" min="0" placeholder=" ">
+            <div id="errExp" class="error-msg"></div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Sign Up</button>
+        </form>
+        <p style="text-align:center;margin-top:16px;font-size:0.9rem;">Already have an account? <a href="provider-login.html">Log in</a></p>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

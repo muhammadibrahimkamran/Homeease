@@ -1,0 +1,34 @@
+<!-- pages/services.html - List of all services (redesigned) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - HomeEase</title>
+  <link rel="icon" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h2 class="section-title fade-in">Our Services</h2>
+    <p class="section-sub fade-in">Choose a service and book a technician.</p>
+    <div id="services" class="grid grid-3"></div>
+  </div>
+  <div id="footer"></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    function bookService(serviceId) {
+      const svc = SERVICES.find(s => s.id === serviceId);
+      const name = svc ? svc.name : serviceId;
+      window.location.href = "booking.html?service=" + encodeURIComponent(name);
+    }
+    renderServiceCards("services", "Book now", "bookService");
+  </script>
+</body>
+</html>

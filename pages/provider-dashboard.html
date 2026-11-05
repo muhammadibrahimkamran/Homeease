@@ -1,0 +1,58 @@
+<!-- pages/provider-dashboard.html - Service provider dashboard (redesigned) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provider Dashboard - HomeEase</title>
+  <link rel="icon" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <div class="dash-layout">
+      <aside class="sidebar">
+        <div class="side-title">Provider Panel</div>
+        <a href="provider-dashboard.html" class="active">Dashboard</a>
+        <a href="#" onclick="logout();return false;">Logout</a>
+      </aside>
+      <main>
+        <div class="dashboard-header fade-in">
+          <h2 class="welcome" id="welcome">Welcome</h2>
+        </div>
+        <h3 style="color:var(--cream);margin-bottom:12px">Booking Requests</h3>
+        <div id="requests" class="booking-list"></div>
+      </main>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    if (!requireRole("provider")) { /* redirected */ }
+    else {
+      const current = getCurrentUser();
+      document.getElementById("welcome").textContent = "Welcome, " + current.name + " (" + current.service + ")";
+      const mine = getBookings().filter(b => b.technicianId === current.id);
+      const container = document.getElementById("requests");
+      if (mine.length === 0) {
+        container.innerHTML = '<div class="empty-state fade-in">' + icon("inbox", 48) + '<h4>No booking requests yet</h4><p>New requests will appear here.</p></div>';
+      } else {
+        container.innerHTML = mine.map(b => `
+          <div class="booking-item fade-in">
+            <h4>${b.service} - ${b.userName} ${statusBadge(b.status)}</h4>
+            <div class="booking-meta">Date: ${b.date} ${b.time}</div>
+            <div class="booking-meta">Address: ${b.address}</div>
+          </div>
+        `).join("");
+      }
+      initScrollAnimations();
+    }
+  </script>
+</body>
+</html>

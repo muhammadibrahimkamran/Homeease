@@ -1,0 +1,225 @@
+<!-- index.html - HomeEase landing page (glass reference style) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeEase - Home services, made effortless</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div class="hero-main">
+        <div class="hero-left">
+          <div class="hero-label">Karachi, Pakistan</div>
+          <h1 class="hero-headline">Home services, made effortless.</h1>
+          <p class="hero-sub">Verified electricians, plumbers, AC and appliance technicians across Karachi. Book in minutes, pay after the job.</p>
+          <div class="hero-actions">
+            <a href="pages/booking.html" class="btn btn-primary btn-lg">Book a service</a>
+            <a href="pages/services.html" class="text-link">Explore services ›</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="floating-glass" id="floatingGlass">
+            <div class="handle"></div>
+            <div class="fg-header"><span>Karachi, booked today</span></div>
+            <div class="fg-inner">
+              <div class="fg-row"><span class="fg-title">AC Repair</span><span class="fg-rating">★ 4.8</span></div>
+              <div class="fg-cols">
+                <div>Date<br><strong>Fri 14</strong></div>
+                <div><span class="fg-pill">45 min away</span></div>
+                <div>Time<br><strong>4:00 PM</strong></div>
+              </div>
+            </div>
+            <div class="fg-inner">
+              <div class="fg-row"><span class="fg-title">Plumber</span><span class="fg-rating">★ 4.7</span></div>
+              <div class="fg-cols">
+                <div>Date<br><strong>Sat 15</strong></div>
+                <div><span class="fg-pill">30 min away</span></div>
+                <div>Time<br><strong>11:00 AM</strong></div>
+              </div>
+            </div>
+            <div style="margin-top:10px;"><span class="fg-save">Save 15% on your first booking</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-strip">
+        <div class="feature-item"><div class="bar"></div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div class="line1">Verified pros</div></div>
+        <div class="feature-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><div class="line1">Same-day booking</div></div>
+        <div class="feature-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><div class="line1">Fair pricing</div></div>
+        <div class="feature-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="line1">Karachi-wide</div></div>
+        <div class="feature-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><div class="line1">Satisfaction promise</div></div>
+      </div>
+    </div>
+    <div class="hero-glow" id="heroGlow"></div>
+  </section>
+
+  <!-- Choose role -->
+  <section class="section" id="roles">
+    <div class="container">
+      <div class="section-label">Get started</div>
+      <h2 class="section-title">Choose your role</h2>
+      <p class="section-sub">Are you looking for a service or offering one?</p>
+      <div class="grid grid-2 stagger" id="roleCards">
+        <div class="card choice-card tilt-card glow-border fade-in">
+          <div class="icon-wrap"><span data-icon="user" data-size="32"></span></div>
+          <h3>Sign in as User</h3>
+          <p>I need my fridge repaired, a plumber, an electrician...</p>
+          <div class="btns">
+            <a href="pages/user-login.html" class="btn btn-primary">Sign in</a>
+            <a href="pages/user-signup.html" class="btn btn-secondary">Sign up</a>
+          </div>
+        </div>
+        <div class="card choice-card tilt-card glow-border fade-in">
+          <div class="icon-wrap"><span data-icon="provider" data-size="32"></span></div>
+          <h3>Sign in as Service Provider</h3>
+          <p>For electricians, plumbers, AC technicians, carpenters and more.</p>
+          <div class="btns">
+            <a href="pages/provider-login.html" class="btn btn-primary">Sign in</a>
+            <a href="pages/provider-signup.html" class="btn btn-secondary">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="servicesSection">
+    <div class="container">
+      <div class="section-label">Services</div>
+      <h2 class="section-title">Our services</h2>
+      <p class="section-sub">Six services to keep your home running smoothly.</p>
+      <div id="services" class="grid grid-3 stagger"></div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-label">Process</div>
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">Four simple steps to get your job done.</p>
+      <div class="steps-wrap fade-in">
+        <div class="steps-connector" id="stepsLine"></div>
+        <div class="steps">
+          <div class="step"><div class="step-circle"><span data-icon="services" data-size="26"></span></div><h4>Choose a service</h4><p>Pick from our list of home services.</p></div>
+          <div class="step"><div class="step-circle"><span data-icon="calendar" data-size="26"></span></div><h4>Book a technician</h4><p>Select a professional and a time slot.</p></div>
+          <div class="step"><div class="step-circle"><span data-icon="check" data-size="26"></span></div><h4>Get it done</h4><p>The technician visits and fixes the issue.</p></div>
+          <div class="step"><div class="step-circle"><span data-icon="star" data-size="26"></span></div><h4>Pay & review</h4><p>Pay after the job and leave a review.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats strip -->
+  <section class="stats-strip" id="stats">
+    <div class="container">
+      <div class="section-label">Impact</div>
+      <h2 class="section-title">Numbers that matter</h2>
+      <div class="grid grid-4 fade-in" style="margin-top:24px;">
+        <div class="stat-card"><div class="stat-num" data-target="500" data-decimals="0" data-suffix="+">0</div><div class="stat-label">Verified Technicians</div></div>
+        <div class="stat-card"><div class="stat-num" data-target="10000" data-decimals="0" data-suffix="+">0</div><div class="stat-label">Jobs Completed</div></div>
+        <div class="stat-card"><div class="stat-num" data-target="4.8" data-decimals="1">0</div><div class="stat-label">Average Rating</div></div>
+        <div class="stat-card"><div class="stat-num" data-target="20" data-decimals="0">0</div><div class="stat-label">Karachi Areas Covered</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular technicians -->
+  <section class="section" id="techs">
+    <div class="container">
+      <div class="section-label">Team</div>
+      <h2 class="section-title">Popular technicians</h2>
+      <p class="section-sub">Top-rated professionals near you.</p>
+      <div id="techsGrid" class="grid grid-4 stagger"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-label">Support</div>
+      <h2 class="section-title">Frequently asked questions</h2>
+      <p class="section-sub">Everything you need to know.</p>
+      <div style="max-width:760px;margin:0 auto;">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I book a service? <span class="chev">▾</span></button><div class="faq-a">Choose a service, select a technician and time slot, then confirm your booking. It takes under a minute.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are technicians verified? <span class="chev">▾</span></button><div class="faq-a">Yes, all technicians on HomeEase are background-checked and rated by customers.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I pay? <span class="chev">▾</span></button><div class="faq-a">You pay after the job is completed. No hidden fees.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I cancel a booking? <span class="chev">▾</span></button><div class="faq-a">Yes, you can cancel pending bookings from your dashboard.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="cta-banner fade-in">
+        <h2>Join HomeEase as a technician</h2>
+        <p>Grow your business, get more jobs, and earn on your own schedule.</p>
+        <a href="pages/provider-signup.html" class="btn btn-primary btn-lg">Join as Provider</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    renderServiceCards("services", "Book now", "bookService");
+    function bookService(serviceId) {
+      const svc = SERVICES.find(s => s.id === serviceId);
+      const name = svc ? svc.name : serviceId;
+      window.location.href = "pages/booking.html?service=" + encodeURIComponent(name);
+    }
+    (function() {
+      const container = document.getElementById("techsGrid");
+      if (!container) return;
+      const techs = (typeof getProviders === "function" ? getProviders() : []).slice(0, 4);
+      container.innerHTML = techs.map(t => `
+        <div class="card tech-card fade-in">
+          <div class="tech-avatar">${t.name.split(" ").map(n=>n[0]).join("").slice(0,2)}</div>
+          <h4>${t.name}</h4>
+          <div class="tech-rating">${"★".repeat(Math.round(t.rating || 4.5))} ${t.rating || 4.5}</div>
+          <div class="meta">${t.service} - ${t.city}</div>
+          <a href="pages/booking.html?service=${encodeURIComponent(t.service)}" class="btn btn-primary btn-sm">Book</a>
+        </div>
+      `).join("");
+    })();
+    (function() {
+      const groups = document.querySelectorAll(".stagger");
+      if (!("IntersectionObserver" in window)) { groups.forEach(g=>g.classList.add("visible")); return; }
+      const io = new IntersectionObserver(entries => { entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } }); }, { threshold: 0.15 });
+      groups.forEach(g => io.observe(g));
+    })();
+    (function() {
+      const line = document.getElementById("stepsLine");
+      const circles = document.querySelectorAll(".step-circle");
+      if (!("IntersectionObserver" in window)) { if(line)line.classList.add("drawn"); circles.forEach(c=>c.classList.add("pop")); return; }
+      const io = new IntersectionObserver(entries => { entries.forEach(en => { if (en.isIntersecting) { if(line)line.classList.add("drawn"); circles.forEach((c,i)=>setTimeout(()=>c.classList.add("pop"),i*150)); io.unobserve(en.target); } }); }, { threshold: 0.3 });
+      const wrap = document.querySelector(".steps-wrap"); if (wrap) io.observe(wrap);
+    })();
+    (function() {
+      document.querySelectorAll(".tilt-card").forEach(card => {
+        card.addEventListener("mousemove", e => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left)/r.width - 0.5;
+          const y = (e.clientY - r.top)/r.height - 0.5;
+          card.style.transform = `rotateY(${x*8}deg) rotateX(${-y*8}deg)`;
+        });
+        card.addEventListener("mouseleave", () => { card.style.transform = "rotateY(0) rotateX(0)"; });
+      });
+    })();
+    window.toggleFaq = function(btn) { btn.parentElement.classList.toggle("open"); };
+  </script>
+</body>
+</html>

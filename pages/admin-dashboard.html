@@ -1,0 +1,58 @@
+<!-- pages/admin-dashboard.html - Admin overview dashboard (redesigned) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - HomeEase</title>
+  <link rel="icon" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <div class="dash-layout">
+      <aside class="sidebar">
+        <div class="side-title">Admin Panel</div>
+        <a href="admin-dashboard.html" class="active">Overview</a>
+        <a href="#" onclick="logout();return false;">Logout</a>
+      </aside>
+      <main>
+        <div class="dashboard-header fade-in">
+          <h2 class="welcome">Admin Dashboard</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="card stat-card fade-in">
+            <div class="stat-num" id="usersCount">0</div>
+            <div class="stat-label">Total Users</div>
+          </div>
+          <div class="card stat-card fade-in">
+            <div class="stat-num" id="providersCount">0</div>
+            <div class="stat-label">Total Providers</div>
+          </div>
+          <div class="card stat-card fade-in">
+            <div class="stat-num" id="bookingsCount">0</div>
+            <div class="stat-label">Total Bookings</div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    if (!requireRole("admin")) { /* redirected */ }
+    else {
+      document.getElementById("usersCount").textContent = getUsers().length;
+      document.getElementById("providersCount").textContent = getProviders().length;
+      document.getElementById("bookingsCount").textContent = getBookings().length;
+      initScrollAnimations();
+    }
+  </script>
+</body>
+</html>
