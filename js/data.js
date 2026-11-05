@@ -3,12 +3,14 @@
 
 // List of services offered by HomeEase.
 const SERVICES = [
-  { id: "electrician", name: "Electrician", desc: "Wiring, switches, fans, lighting and more." },
-  { id: "plumber", name: "Plumber", desc: "Leaks, taps, pipes and bathroom fittings." },
-  { id: "ac", name: "AC Repair", desc: "AC servicing, gas refill and installation." },
-  { id: "fridge", name: "Fridge & Kitchen Appliances", desc: "Fridge, washing machine, microwave repair." },
-  { id: "carpenter", name: "Carpenter", desc: "Furniture repair, doors, windows and woodwork." },
-  { id: "painter", name: "Painter", desc: "Interior and exterior painting services." }
+  { id: "electrician", name: "Electrician", desc: "Wiring, switches, fans, lighting and more.", image: "electrician.jpg" },
+  { id: "plumber", name: "Plumber", desc: "Leaks, taps, pipes and bathroom fittings.", image: "plumber.jpg" },
+  { id: "ac", name: "AC Repair", desc: "AC servicing, gas refill and installation.", image: "ac-repair.jpg" },
+  { id: "fridge", name: "Fridge & Kitchen Appliances", desc: "Fridge, washing machine, microwave repair.", image: "fridge-repair.jpg" },
+  { id: "carpenter", name: "Carpenter", desc: "Furniture repair, doors, windows and woodwork.", image: "carpenter.jpg" },
+  { id: "painter", name: "Painter", desc: "Interior and exterior painting services.", image: "painter.jpg" },
+  { id: "cctv", name: "CCTV & Security", desc: "Camera installation and security systems.", image: "cctv.jpg" },
+  { id: "handyman", name: "Handyman", desc: "General home repairs and maintenance.", image: "handyman.jpg" }
 ];
 
 // Dummy service providers (technicians) seeded on first load.

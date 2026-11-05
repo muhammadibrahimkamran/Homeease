@@ -35,7 +35,7 @@ function icon(name, size) {
 function serviceIcon(id) {
   const map = {
     electrician: "bolt", plumber: "drop", ac: "snow", fridge: "fridge",
-    carpenter: "hammer", painter: "brush"
+    carpenter: "hammer", painter: "brush", cctv: "shield", handyman: "hammer"
   };
   return icon(map[id] || "services", 40);
 }
@@ -220,17 +220,24 @@ function initScrollAnimations() {
 function renderServiceCards(containerId, buttonLabel, onClick, withImage) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  container.innerHTML = SERVICES.map(s => `
+  const base = (typeof getBasePath === "function") ? getBasePath() : "";
+  container.innerHTML = SERVICES.map(s => {
+    const imgSrc = s.image ? (base + "images/" + s.image) : "";
+    const alt = s.name + " service in Karachi";
+    const media = imgSrc
+      ? `<div class="service-media img-wrap"><img src="${imgSrc}" alt="${alt}" loading="lazy" onload="this.classList.add('loaded')" onerror="this.style.display='none';this.parentElement.innerHTML='${serviceIcon(s.id).replace(/'/g, "\\'")}'"></div>`
+      : `<div class="service-media">${serviceIcon(s.id)}</div>`;
+    return `
     <div class="card service-card fade-in">
-      <div class="service-media">${serviceIcon(s.id)}</div>
+      ${media}
       <div class="service-body">
         <h3>${s.name}</h3>
         <p>${s.desc}</p>
         ${onClick ? `<a class="service-link" href="#" onclick="${onClick}('${s.id}');return false;">${buttonLabel} ${icon("arrow",14)}</a>` : ""}
       </div>
       ${onClick ? `<div class="book-float"><button class="btn btn-primary btn-sm" style="width:100%" onclick="${onClick}('${s.id}')">${buttonLabel}</button></div>` : ""}
-    </div>
-  `).join("");
+    </div>`;
+  }).join("");
   initScrollAnimations();
 }
 
