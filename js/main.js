@@ -42,45 +42,43 @@ function serviceIcon(id) {
 
 function navbarHTML(base) {
   const current = (typeof getCurrentUser === "function") ? getCurrentUser() : null;
-  let centerLinks = `
-    <a href="${base}index.html" class="active"><span class="dot"></span>Home</a>
-    <a href="${base}pages/services.html"><span class="dot"></span>Services</a>
-    <a href="${base}index.html#techs"><span class="dot"></span>Technicians</a>
-    <a href="${base}index.html#how"><span class="dot"></span>How it works</a>
-    <a href="${base}index.html#about"><span class="dot"></span>About</a>
-  `;
-  let overlayLinks = `
-    <a href="${base}index.html">Home</a>
-    <a href="${base}pages/services.html">Services</a>
-    <a href="${base}index.html#techs">Technicians</a>
-    <a href="${base}index.html#how">How it works</a>
-    <a href="${base}index.html#about">About</a>
-    <a href="${base}pages/user-login.html">User Login</a>
-    <a href="${base}pages/provider-login.html">Provider Login</a>
-    <a href="${base}pages/admin-login.html">Admin Login</a>
-  `;
+  const servicesItems = ["Electrician","Plumber","AC Repair","Fridge & Kitchen Appliances","Carpenter","Painter","CCTV & Security","Handyman"];
+  const areas = ["Gulshan-e-Iqbal","DHA","Clifton","North Nazimabad","Gulistan-e-Jauhar","PECHS","Saddar","Malir"];
+  const serviceLinks = servicesItems.map(function(s){ return '<a href="' + base + 'pages/services.html">' + s + '</a>'; }).join("");
+  const areaLinks = areas.map(function(a){ return '<a href="' + base + 'pages/services.html">' + a + '</a>'; }).join("");
+
+  let overlayLinks = '<a href="' + base + 'index.html">Home</a><a href="' + base + 'index.html#about">About</a><a href="' + base + 'pages/services.html">Services</a><a href="' + base + 'index.html#techs">Technicians</a><a href="' + base + 'index.html#how">How it works</a><a href="' + base + 'index.html#faq">FAQ</a><a href="' + base + 'index.html#contact">Contact</a><a href="' + base + 'pages/user-login.html">User Login</a><a href="' + base + 'pages/provider-login.html">Provider Login</a><a href="' + base + 'pages/admin-login.html">Admin Login</a>';
   if (current) {
     const dash = current.role === "user" ? "user-dashboard.html" : current.role === "provider" ? "provider-dashboard.html" : "admin-dashboard.html";
-    overlayLinks += `<a href="${base}pages/${dash}">Dashboard</a><a href="#" onclick="logout();return false;">Logout</a>`;
+    overlayLinks += '<a href="' + base + 'pages/' + dash + '">Dashboard</a><a href="#" onclick="logout();return false;">Logout</a>';
   }
-  const userIcon = current
-    ? (current.role === "user" ? "user" : current.role === "provider" ? "provider" : "shield")
-    : "user";
-  return `
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a class="brand" href="${base}index.html"><img src="${base}images/logo.png" alt="HomeEase logo" class="site-logo"><span>HomeEase</span></a>
-      <div class="nav-pillbar">${centerLinks}</div>
-      <div class="nav-right">
-        <a href="${base}pages/user-login.html" class="icon-btn" aria-label="Account">${icon(userIcon,18)}</a>
-        <button class="icon-btn menu-btn" onclick="toggleMenu()" aria-label="Menu">${icon("menu",18)} Menu</button>
-      </div>
-    </div>
-  </nav>
-  <div class="overlay-menu" id="mobileMenu">
-    <button class="overlay-close" onclick="toggleMenu()" aria-label="Close">✕</button>
-    ${overlayLinks}
-  </div>`;
+
+  const annItems = ["Same-day booking available","Verified and background-checked technicians","Transparent pricing, pay after the job","Serving all of Karachi"];
+  const annHTML = annItems.map(function(i){ return '<span class="ann-item"><span class="ann-dot"></span>' + i + '</span>'; }).join("");
+
+  return '<div class="announcement-bar"><div class="ann-track">' + annHTML + annHTML + '</div></div>' +
+  '<nav class="navbar">' +
+    '<div class="nav-inner">' +
+      '<a class="brand" href="' + base + 'index.html"><img src="' + base + 'images/logo.png" alt="HomeEase logo" class="site-logo"><span>HomeEase</span></a>' +
+      '<div class="nav-pillbar">' +
+        '<a href="' + base + 'index.html" class="active"><span class="dot"></span>Home</a>' +
+        '<a href="' + base + 'index.html#about"><span class="dot"></span>About</a>' +
+        '<div class="nav-dropdown"><a href="' + base + 'pages/services.html"><span class="dot"></span>Services ▾</a><div class="dropdown-menu">' + serviceLinks + '</div></div>' +
+        '<div class="nav-dropdown"><a href="' + base + 'pages/services.html"><span class="dot"></span>Areas ▾</a><div class="dropdown-menu">' + areaLinks + '</div></div>' +
+        '<a href="' + base + 'index.html#how"><span class="dot"></span>How it works</a>' +
+        '<a href="' + base + 'index.html#faq"><span class="dot"></span>FAQ</a>' +
+        '<a href="' + base + 'index.html#contact"><span class="dot"></span>Contact</a>' +
+      '</div>' +
+      '<div class="nav-right">' +
+        '<a href="tel:+923000000000" class="btn btn-primary btn-sm nav-call">Call Now</a>' +
+        '<button class="icon-btn menu-btn" onclick="toggleMenu()" aria-label="Menu">' + icon("menu",18) + ' Menu</button>' +
+      '</div>' +
+    '</div>' +
+  '</nav>' +
+  '<div class="overlay-menu" id="mobileMenu">' +
+    '<button class="overlay-close" onclick="toggleMenu()" aria-label="Close">✕</button>' +
+    overlayLinks +
+  '</div>';
 }
 
 function footerHTML(base) {
@@ -183,6 +181,12 @@ document.addEventListener("DOMContentLoaded", initLayout);
   btt.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>';
   document.body.appendChild(btt);
   btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // Floating action buttons
+  const fabWrap = document.createElement("div");
+  fabWrap.className = "fab-wrap";
+  fabWrap.innerHTML = '<a href="https://wa.me/923000000000" target="_blank" class="fab whatsapp pulse" data-tooltip="WhatsApp us">W</a><a href="tel:+923000000000" class="fab call pulse" data-tooltip="Call us">☎</a>';
+  document.body.appendChild(fabWrap);
 
   // Toast container
   const toastWrap = document.createElement("div");
