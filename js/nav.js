@@ -110,6 +110,7 @@
   if (isHome() && "IntersectionObserver" in window) {
     const sections = ["about", "areas", "how", "faq", "contact"];
     const links = header.querySelectorAll(".site-nav-link");
+    const visible = new Set();
     function setActive(id) {
       links.forEach(function (l) {
         const href = l.getAttribute("href") || "";
@@ -117,11 +118,18 @@
         else if (href.indexOf("#") !== -1) l.classList.remove("active");
       });
     }
+    function updateActive() {
+      let current = null;
+      sections.forEach(function (id) { if (visible.has(id)) current = id; });
+      if (current) setActive(current);
+    }
     const io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) setActive(en.target.id);
+        if (en.isIntersecting) visible.add(en.target.id);
+        else visible.delete(en.target.id);
       });
-    }, { rootMargin: "-30% 0px -55% 0px", threshold: 0 });
+      updateActive();
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.1 });
     sections.forEach(function (id) {
       const el = document.getElementById(id);
       if (el) io.observe(el);
