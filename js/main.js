@@ -47,7 +47,7 @@ function navbarHTML(base) {
   const serviceLinks = servicesItems.map(function(s){ return '<a href="' + base + 'pages/services.html">' + s + '</a>'; }).join("");
   const areaLinks = areas.map(function(a){ return '<a href="' + base + 'pages/services.html">' + a + '</a>'; }).join("");
 
-  let overlayLinks = '<a href="' + base + 'index.html">Home</a><a href="' + base + 'index.html#about">About</a><a href="' + base + 'pages/services.html">Services</a><a href="' + base + 'index.html#techs">Technicians</a><a href="' + base + 'index.html#how">How it works</a><a href="' + base + 'index.html#faq">FAQ</a><a href="' + base + 'index.html#contact">Contact</a><a href="' + base + 'pages/user-login.html">User Login</a><a href="' + base + 'pages/provider-login.html">Provider Login</a><a href="' + base + 'pages/admin-login.html">Admin Login</a>';
+  let overlayLinks = '<a href="' + base + 'index.html">Home</a><a href="' + base + 'pages/about.html">About</a><a href="' + base + 'pages/services.html">Services</a><a href="' + base + 'index.html#techs">Technicians</a><a href="' + base + 'index.html#how">How it works</a><a href="' + base + 'index.html#faq">FAQ</a><a href="' + base + 'pages/contact.html">Contact</a><a href="' + base + 'pages/user-login.html">User Login</a><a href="' + base + 'pages/provider-login.html">Provider Login</a><a href="' + base + 'pages/admin-login.html">Admin Login</a>';
   if (current) {
     const dash = current.role === "user" ? "user-dashboard.html" : current.role === "provider" ? "provider-dashboard.html" : "admin-dashboard.html";
     overlayLinks += '<a href="' + base + 'pages/' + dash + '">Dashboard</a><a href="#" onclick="logout();return false;">Logout</a>';
@@ -62,12 +62,12 @@ function navbarHTML(base) {
       '<a class="brand" href="' + base + 'index.html"><img src="' + base + 'images/logo.png" alt="HomeEase logo" class="site-logo"><span>HomeEase</span></a>' +
       '<div class="nav-pillbar">' +
         '<a href="' + base + 'index.html" class="active"><span class="dot"></span>Home</a>' +
-        '<a href="' + base + 'index.html#about"><span class="dot"></span>About</a>' +
+        '<a href="' + base + 'pages/about.html"><span class="dot"></span>About</a>' +
         '<div class="nav-dropdown"><a href="' + base + 'pages/services.html"><span class="dot"></span>Services ▾</a><div class="dropdown-menu">' + serviceLinks + '</div></div>' +
         '<div class="nav-dropdown"><a href="' + base + 'pages/services.html"><span class="dot"></span>Areas ▾</a><div class="dropdown-menu">' + areaLinks + '</div></div>' +
         '<a href="' + base + 'index.html#how"><span class="dot"></span>How it works</a>' +
         '<a href="' + base + 'index.html#faq"><span class="dot"></span>FAQ</a>' +
-        '<a href="' + base + 'index.html#contact"><span class="dot"></span>Contact</a>' +
+        '<a href="' + base + 'pages/contact.html"><span class="dot"></span>Contact</a>' +
       '</div>' +
       '<div class="nav-right">' +
         '<a href="tel:+923000000000" class="btn btn-primary btn-sm nav-call">Call Now</a>' +

@@ -1,0 +1,70 @@
+<!-- pages/about.html - About HomeEase -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - HomeEase</title>
+  <link rel="icon" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="section" style="padding-top:40px;">
+    <div class="container">
+      <div class="section-label">About</div>
+      <h2 class="section-title fade-in">About HomeEase</h2>
+      <p class="section-sub fade-in">HomeEase is a household service booking platform that connects customers with trusted, skilled professionals across Karachi. We make booking reliable home services simple, fast and affordable.</p>
+
+      <div class="grid grid-2 stagger" style="margin-bottom:48px;">
+        <div class="card fade-in">
+          <h3 style="margin-bottom:8px;">Our Mission</h3>
+          <p style="color:var(--muted);">To bring quality workmanship to your doorstep with transparent pricing and verified professionals, so every household in Karachi can get help they can trust.</p>
+        </div>
+        <div class="card fade-in">
+          <h3 style="margin-bottom:8px;">Our Vision</h3>
+          <p style="color:var(--muted);">To become Karachi's most trusted home services marketplace, empowering technicians to grow their business while giving customers peace of mind.</p>
+        </div>
+      </div>
+
+      <div class="section-label">Coverage</div>
+      <h2 class="section-title fade-in">Karachi-wide Coverage</h2>
+      <p class="section-sub fade-in">We serve neighborhoods across Karachi, from DHA and Clifton to Gulshan, North Nazimabad and beyond.</p>
+      <div class="grid grid-4 stagger" style="margin-bottom:48px;">
+        <div class="card feature-card fade-in"><div class="icon-wrap"><span data-icon="location" data-size="28"></span></div><h4>DHA &amp; Clifton</h4><p>Premium neighborhoods covered.</p></div>
+        <div class="card feature-card fade-in"><div class="icon-wrap"><span data-icon="location" data-size="28"></span></div><h4>Gulshan &amp; Jauhar</h4><p>East Karachi fully served.</p></div>
+        <div class="card feature-card fade-in"><div class="icon-wrap"><span data-icon="location" data-size="28"></span></div><h4>North Nazimabad</h4><p>Central Karachi coverage.</p></div>
+        <div class="card feature-card fade-in"><div class="icon-wrap"><span data-icon="location" data-size="28"></span></div><h4>PECHS &amp; Saddar</h4><p>Heart of the city.</p></div>
+      </div>
+
+      <div class="section-label">Trust</div>
+      <h2 class="section-title fade-in">Why Customers Trust Us</h2>
+      <p class="section-sub fade-in">Verified professionals, fair pricing and a satisfaction promise on every job.</p>
+      <div class="grid grid-3 stagger">
+        <div class="card feature-card fade-in"><div class="icon-wrap"><span data-icon="shield" data-size="28"></span></div><h4>Verified Professionals</h4><p>All technicians are background-checked and rated by customers.</p></div>
+        <div class="card feature-card fade-in"><div class="icon-wrap"><span data-icon="wallet" data-size="28"></span></div><h4>Transparent Pricing</h4><p>No hidden fees. You pay after the job is completed.</p></div>
+        <div class="card feature-card fade-in"><div class="icon-wrap"><span data-icon="star" data-size="28"></span></div><h4>Satisfaction Promise</h4><p>We stand behind every booking with a quality guarantee.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    (function() {
+      const groups = document.querySelectorAll(".stagger");
+      if (!("IntersectionObserver" in window)) { groups.forEach(g=>g.classList.add("visible")); return; }
+      const io = new IntersectionObserver(entries => { entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } }); }, { threshold: 0.15 });
+      groups.forEach(g => io.observe(g));
+    })();
+  </script>
+</body>
+</html>

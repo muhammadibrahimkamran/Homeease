@@ -1,4 +1,4 @@
-<!-- pages/services.html - List of all services (redesigned) -->
+<!-- pages/services.html - Dedicated services page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,28 +8,115 @@
   <link rel="icon" href="../images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header id="site-header"></header>
-  <div class="container">
-    <h2 class="section-title fade-in">Our Services</h2>
-    <p class="section-sub fade-in">Choose a service and book a technician.</p>
-    <div id="services" class="grid grid-4"></div>
-  </div>
+
+  <section class="section" style="padding-top:40px;">
+    <div class="container">
+      <div class="section-label">Services</div>
+      <h2 class="section-title fade-in">All Home Services</h2>
+      <p class="section-sub fade-in">Browse every service HomeEase offers and book a verified technician in minutes.</p>
+
+      <div class="grid grid-3 stagger" id="servicesGrid">
+        <div class="card service-card fade-in" id="service-electrician">
+          <div class="service-media"><img src="../images/electrician.jpg" alt="Electrician" loading="lazy"></div>
+          <div class="service-body">
+            <h3>Electrician</h3>
+            <p>Wiring, switches, fans, lighting, short-circuit fixes and new installations by certified electricians.</p>
+            <div style="color:var(--orange);font-weight:700;margin-bottom:12px;">Starting from Rs. 500</div>
+            <a class="btn btn-primary btn-sm" style="width:100%" href="booking.html?service=Electrician">Book Now</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in" id="service-plumber">
+          <div class="service-media"><img src="../images/plumber.jpg" alt="Plumber" loading="lazy"></div>
+          <div class="service-body">
+            <h3>Plumber</h3>
+            <p>Leak repairs, tap replacement, pipe fitting, drainage and bathroom fixture installation.</p>
+            <div style="color:var(--orange);font-weight:700;margin-bottom:12px;">Starting from Rs. 600</div>
+            <a class="btn btn-primary btn-sm" style="width:100%" href="booking.html?service=Plumber">Book Now</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in" id="service-ac">
+          <div class="service-media"><img src="../images/ac-repair.jpg" alt="AC Repair" loading="lazy"></div>
+          <div class="service-body">
+            <h3>AC Repair</h3>
+            <p>AC servicing, gas refill, cooling issues, installation and seasonal maintenance for all brands.</p>
+            <div style="color:var(--orange);font-weight:700;margin-bottom:12px;">Starting from Rs. 1,200</div>
+            <a class="btn btn-primary btn-sm" style="width:100%" href="booking.html?service=AC%20Repair">Book Now</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in" id="service-fridge">
+          <div class="service-media"><img src="../images/fridge-repair.jpg" alt="Fridge and Appliances" loading="lazy"></div>
+          <div class="service-body">
+            <h3>Fridge &amp; Kitchen Appliances</h3>
+            <p>Fridge, washing machine, microwave and oven repair by experienced appliance technicians.</p>
+            <div style="color:var(--orange);font-weight:700;margin-bottom:12px;">Starting from Rs. 1,000</div>
+            <a class="btn btn-primary btn-sm" style="width:100%" href="booking.html?service=Fridge%20%26%20Kitchen%20Appliances">Book Now</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in" id="service-carpenter">
+          <div class="service-media"><img src="../images/carpenter.jpg" alt="Carpenter" loading="lazy"></div>
+          <div class="service-body">
+            <h3>Carpenter</h3>
+            <p>Furniture repair, doors, windows, cabinets and custom woodwork handled with precision.</p>
+            <div style="color:var(--orange);font-weight:700;margin-bottom:12px;">Starting from Rs. 800</div>
+            <a class="btn btn-primary btn-sm" style="width:100%" href="booking.html?service=Carpenter">Book Now</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in" id="service-painter">
+          <div class="service-media"><img src="../images/painter.jpg" alt="Painter" loading="lazy"></div>
+          <div class="service-body">
+            <h3>Painter</h3>
+            <p>Interior and exterior painting, wall finishing, texture work and color consultation.</p>
+            <div style="color:var(--orange);font-weight:700;margin-bottom:12px;">Starting from Rs. 1,500 / room</div>
+            <a class="btn btn-primary btn-sm" style="width:100%" href="booking.html?service=Painter">Book Now</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in" id="service-cctv">
+          <div class="service-media"><img src="../images/cctv.jpg" alt="CCTV and Security" loading="lazy"></div>
+          <div class="service-body">
+            <h3>CCTV &amp; Security</h3>
+            <p>Camera installation, DVR/NVR setup, security systems and smart home monitoring.</p>
+            <div style="color:var(--orange);font-weight:700;margin-bottom:12px;">Starting from Rs. 2,000</div>
+            <a class="btn btn-primary btn-sm" style="width:100%" href="booking.html?service=CCTV%20%26%20Security">Book Now</a>
+          </div>
+        </div>
+
+        <div class="card service-card fade-in" id="service-handyman">
+          <div class="service-media"><img src="../images/handyman.jpg" alt="Handyman" loading="lazy"></div>
+          <div class="service-body">
+            <h3>Handyman</h3>
+            <p>General home repairs, mounting, minor fixes and maintenance tasks around the house.</p>
+            <div style="color:var(--orange);font-weight:700;margin-bottom:12px;">Starting from Rs. 700</div>
+            <a class="btn btn-primary btn-sm" style="width:100%" href="booking.html?service=Handyman">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div id="footer"></div>
+
   <script src="../js/data.js"></script>
   <script src="../js/auth.js"></script>
   <script src="../js/nav.js"></script>
   <script src="../js/main.js"></script>
   <script>
-    function bookService(serviceId) {
-      const svc = SERVICES.find(s => s.id === serviceId);
-      const name = svc ? svc.name : serviceId;
-      window.location.href = "booking.html?service=" + encodeURIComponent(name);
-    }
-    renderServiceCards("services", "Book now", "bookService");
+    (function() {
+      const groups = document.querySelectorAll(".stagger");
+      if (!("IntersectionObserver" in window)) { groups.forEach(g=>g.classList.add("visible")); return; }
+      const io = new IntersectionObserver(entries => { entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } }); }, { threshold: 0.15 });
+      groups.forEach(g => io.observe(g));
+    })();
   </script>
 </body>
 </html>

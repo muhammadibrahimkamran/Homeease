@@ -41,7 +41,7 @@
   const html =
     '<div class="site-nav-pill" id="siteNavPill">' +
       '<div class="site-nav-left">' +
-        '<a href="' + base + 'index.html#about" class="site-nav-link">About</a>' +
+        '<a href="' + base + 'pages/about.html" class="site-nav-link">About</a>' +
         '<a href="' + base + 'pages/services.html" class="site-nav-link ' + servicesActive + '">Services</a>' +
         '<a href="' + base + 'index.html#areas" class="site-nav-link">Areas</a>' +
       '</div>' +
@@ -52,7 +52,7 @@
       '<div class="site-nav-right">' +
         '<a href="' + base + 'index.html#how" class="site-nav-link">How it works</a>' +
         '<a href="' + base + 'index.html#faq" class="site-nav-link">FAQ</a>' +
-        '<a href="' + base + 'index.html#contact" class="site-nav-link">Contact</a>' +
+        '<a href="' + base + 'pages/contact.html" class="site-nav-link">Contact</a>' +
         rightPart +
       '</div>' +
       '<button class="site-nav-hamburger" id="siteNavHamburger" type="button" aria-label="Menu">&#9776;</button>' +
@@ -61,11 +61,11 @@
       '<button class="site-nav-overlay-close" id="siteNavOverlayClose" type="button" aria-label="Close">&times;</button>' +
       '<div class="site-nav-overlay-links">' +
         '<a href="' + base + 'index.html">Home</a>' +
-        '<a href="' + base + 'index.html#about">About</a>' +
+        '<a href="' + base + 'pages/about.html">About</a>' +
         '<a href="' + base + 'pages/services.html">Services</a>' +
         '<a href="' + base + 'index.html#how">How it works</a>' +
         '<a href="' + base + 'index.html#faq">FAQ</a>' +
-        '<a href="' + base + 'index.html#contact">Contact</a>' +
+        '<a href="' + base + 'pages/contact.html">Contact</a>' +
       '</div>' +
       '<div class="site-nav-overlay-auth">' +
         '<a href="' + base + 'pages/user-login.html" class="btn btn-primary">Sign in as User</a>' +
@@ -136,4 +136,3 @@
     });
   }
 })();
-PYEOF
